@@ -1,13 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link rel="stylesheet" href="style.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <script
+      src="https://kit.fontawesome.com/0f30d52ae0.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>basic shopping cart</title>
-</head>
-<body>
-    <div id="content"></div>
+  </head>
+  <body>
+    <div id="content">
+      <form id="form">
+        <div class="addItem">
+          <input class="item" type="text" placeholder="Add item.." />
+          <input class="qty" type="number" placeholder="Quantity.." />
+          <p class="add" id="addBtn"><i class="fas fa-plus"></i></p>
+        </div>
+      </form>
+
+      <div class="display">
+        <p>food</p>
+        <p>3</p>
+        <p><i class="fas fa-minus-circle"></i></p>
+        <p>food</p>
+        <p>3</p>
+        <p><i class="fas fa-minus-circle"></i></p>
+      </div>
+    </div>
     <script src="main.js"></script>
-</body>
+  </body>
 </html>
