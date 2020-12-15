@@ -1,28 +1,41 @@
+
 .addItem {
-    margin: 50px auto 10px auto;
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    grid-template-rows: 30px;
-    width: 400px;
-    align-items: center;
-    border: 1px solid black;
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr;
+  grid-template-rows: 30px;
+  align-items: center;
+}
+/*hide input arrows */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+/* hide input arrows firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+.qty {
+  margin-left: 10px;
+  width: 50px;
+}
+.item {
+  width: 80px;
+  margin-left: 20px;
+}
 
+.add {
+  margin-left: 10px;
 }
-.qty{
-    margin-left: 10px;
+.add:hover {
+  cursor: pointer;
+}
+.displayItem {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr;
+  height: 30px;
+  align-items: center;
+  margin-left: 30px;
 }
 
-.add{
-    margin-left: 10px;
-}
-.add:hover{
-    cursor: pointer;
-}
-.display {
-    margin: 0 auto 0 auto;
-    width: 400px;
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    border: 1px solid black;
-    grid-template-rows: auto;
-}
