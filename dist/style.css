@@ -1,4 +1,6 @@
-
+*{
+  font-family: 'Indie Flower', cursive;
+}
 .addItem {
   display: grid;
   grid-template-columns: 2fr 2fr 1fr;
@@ -16,13 +18,21 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
+input {
+  background-color: #3CBC8D;
+  color: black;
+}
 .qty {
   margin-left: 50px;
-  width: 50px;
+  width: 80px;
+  font-size: 20px ;
 }
+
 .item {
   width: 80px;
   margin-left: 50px;
+  font-size: 20px;
+  
 }
 
 .add {
@@ -34,11 +44,11 @@ input[type="number"] {
 .displayItem {
   display: grid;
   grid-template-columns: 2fr 2fr 2fr;
-  height: 30px;
   align-items: center;
-  border: 1px solid black;
+  border-bottom: 3px solid black;
   text-align: center;
-  padding-bottom: 10px;
+  font-weight: bold;
+  font-size: 20px;
   margin-bottom: 2px;
 }
 .title{
@@ -46,6 +56,8 @@ display: flex;
 justify-content: center;
 height: 100px;
 align-items: center;
+font-size: 40px;
+
 }
 .displayTitle{
   display: grid;
@@ -53,5 +65,9 @@ align-items: center;
   margin-left: 50px;
   font-size: 25px;
   font-weight: bold;
+}
+body{
+  background-image: url(../src/images/shoppingList.jpeg);
+  background-size: 100%
 }
 
