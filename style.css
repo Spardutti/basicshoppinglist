@@ -22,7 +22,7 @@ input {
   background-color: #3CBC8D;
   color: black;
 }
-.qty {
+.qty {-
   margin-left: 50px;
   width: 80px;
   font-size: 20px ;
@@ -67,7 +67,7 @@ font-size: 40px;
   font-weight: bold;
 }
 body{
-  background-image: url(../src/images/shoppingList.jpeg);
+  background-image: url(./images/shoppingList.jpeg);
   background-size: 100%
 }
 
