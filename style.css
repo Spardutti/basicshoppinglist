@@ -22,15 +22,15 @@ input {
   background-color: #3CBC8D;
   color: black;
 }
-.qty {-
-  margin-left: 50px;
+.qty {
+  margin-left:40px;
   width: 80px;
   font-size: 20px ;
 }
 
 .item {
   width: 80px;
-  margin-left: 50px;
+  margin-left: 20px;
   font-size: 20px;
   
 }
@@ -56,13 +56,13 @@ display: flex;
 justify-content: center;
 height: 100px;
 align-items: center;
-font-size: 40px;
+font-size: 30px;
 
 }
 .displayTitle{
   display: grid;
   grid-template-columns: 2fr 2fr 1fr;
-  margin-left: 50px;
+  margin-left: 10px;
   font-size: 25px;
   font-weight: bold;
 }
