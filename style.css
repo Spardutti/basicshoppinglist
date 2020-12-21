@@ -17,25 +17,41 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 .qty {
-  margin-left: 10px;
+  margin-left: 50px;
   width: 50px;
 }
 .item {
   width: 80px;
-  margin-left: 20px;
+  margin-left: 50px;
 }
 
 .add {
-  margin-left: 10px;
+  margin-left: 20px;
 }
 .add:hover {
   cursor: pointer;
 }
 .displayItem {
   display: grid;
-  grid-template-columns: 2fr 2fr 1fr;
+  grid-template-columns: 2fr 2fr 2fr;
   height: 30px;
   align-items: center;
-  margin-left: 30px;
+  border: 1px solid black;
+  text-align: center;
+  padding-bottom: 10px;
+  margin-bottom: 2px;
+}
+.title{
+display: flex;
+justify-content: center;
+height: 100px;
+align-items: center;
+}
+.displayTitle{
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr;
+  margin-left: 50px;
+  font-size: 25px;
+  font-weight: bold;
 }
 
