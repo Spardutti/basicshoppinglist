@@ -11,6 +11,10 @@ function addItem(arr) {
   let itemName = document.querySelector(".item");
   let qty = document.querySelector(".qty");
 
+  if(qty.value == ""){
+    qty.value = 1
+  }
+  console.log(qty)
   let item = new Item(itemName.value, qty.value);
   arr.push(item);
   localStorage.setItem("item", JSON.stringify(arr));

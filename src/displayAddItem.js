@@ -15,13 +15,10 @@ function displayAddedItem(item, arr) {
   delBtn.addEventListener("click", () => {
     removeItem(arr);
 })
-if(item.qty == ""){
-  itemQty.innerHTML = "-"
-}
-  if (item.name != "") {
+
     itemDiv.append(itemName, itemQty, delBtn);
     divContainer.appendChild(itemDiv);
-  }
+  
 }
 
 export { displayAddedItem };
