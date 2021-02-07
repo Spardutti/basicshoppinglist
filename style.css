@@ -49,7 +49,7 @@ input {
   text-align: center;
   font-weight: bold;
   font-size: 20px;
-  margin-bottom: 2px;
+
 }
 .title{
 display: flex;
@@ -70,4 +70,11 @@ body{
   background-image: url(./images/shoppingList.jpeg);
   background-size: 100%
 }
+
+.display {
+  margin: 0px;
+}
+
+#user-pic {
+ 
 
