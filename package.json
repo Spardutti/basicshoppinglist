@@ -1,7 +1,6 @@
 {
   "name": "basicshoppinglist",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -19,5 +18,10 @@
   "devDependencies": {
     "webpack": "^5.10.1",
     "webpack-cli": "^4.2.0"
-  }
+  },
+  "dependencies": {
+    "firebase": "^8.2.6",
+    "firebaseui": "^4.7.3"
+  },
+  "description": ""
 }

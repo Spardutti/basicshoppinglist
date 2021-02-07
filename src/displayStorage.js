@@ -1,6 +1,7 @@
 import { removeItem } from "./removeItem";
 
 function displayStorage(arr) {
+  
   arr.forEach((e) => {
     let itemName = document.createElement("p");
     let itemQty = document.createElement("p");
