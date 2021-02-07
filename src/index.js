@@ -1,3 +1,5 @@
+import { removeItem } from "./removeItem";
+
 const { addItem } = require("./addItem");
 const { displayStorage } = require("./displayStorage");
 
@@ -6,15 +8,16 @@ let userPicElement = document.getElementById("user-pic");
 let signBtn = document.getElementById("log-in");
 let outBtn = document.getElementById("log-out");
 
+//logs in
 const signIn = () => {
   let provider = new firebase.auth.GoogleAuthProvider();
   firebase.auth().signInWithPopup(provider);
 };
-
+//logs out
 const signOut = () => {
   firebase.auth().signOut();
 };
-
+//inicia firebase Authenticator and listen for changes
 const initFirebaseAuth = () => {
   firebase.auth().onAuthStateChanged(authStateObserver);
 };
@@ -35,11 +38,34 @@ const checkSignedInWithMessage = () => {
   if (isUserSignedIn()) {
     return true;
   }
-
   alert("You must Log-in");
   return false;
-}
+};
 
+//load tasks and listen for new tasks
+const loadTasks = () => {
+  console.log("loading");
+  let query = firebase
+    .firestore()
+    .collection("task")
+    .orderBy("timestamp", "desc");
+
+  //listen for the query
+  query.onSnapshot((snapshot) => {
+    snapshot.docChanges().forEach((change) => {
+      if (change.type === "removed") {
+        removeItem(change.doc.id);
+        console.log("deleted");
+      }
+      if (change.type === "added") {
+        console.log(change.type);
+        let task = change.doc.data();
+        displayStorage(task.task, task.quantity, change.doc.id);
+      }
+    });
+  });
+};
+//figure how to delete item with click
 
 const authStateObserver = (user) => {
   if (user) {
@@ -64,33 +90,19 @@ const authStateObserver = (user) => {
   }
 };
 
-
 initFirebaseAuth();
+
+loadTasks();
 
 signBtn.addEventListener("click", signIn);
 outBtn.addEventListener("click", signOut);
 
-(function cart() {
-  if (localStorage.getItem("item") != null) {
-    let arr = JSON.parse(localStorage.getItem("item"));
-    displayStorage(arr);
-    let form = document.getElementById("form");
-    let addBtn = document.getElementById("addBtn");
-    addBtn.addEventListener("click", () => {
-      addItem(arr);
-      form.reset();
-    });
-  } else {
-    let arr = [];
-    let form = document.getElementById("form");
-    let addBtn = document.getElementById("addBtn");
-    addBtn.addEventListener("click", () => {
-      if (checkSignedInWithMessage()) {
-        addItem(arr);
-        form.reset();
-      }
-    });
+let addBtn = document.getElementById("addBtn");
+addBtn.addEventListener("click", () => {
+  if (checkSignedInWithMessage()) {
+    addItem();
+    form.reset();
   }
-})();
+});
 
-export { getUserName, getProfilePicUrl, checkSignedInWithMessage};
+export { getUserName, getProfilePicUrl, checkSignedInWithMessage };
