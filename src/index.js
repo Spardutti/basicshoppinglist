@@ -44,7 +44,6 @@ const checkSignedInWithMessage = () => {
 
 //load tasks and listen for new tasks
 const loadTasks = () => {
-  console.log("loading");
   let query = firebase
     .firestore()
     .collection("task")
@@ -55,10 +54,8 @@ const loadTasks = () => {
     snapshot.docChanges().forEach((change) => {
       if (change.type === "removed") {
         removeItem(change.doc.id);
-        console.log("deleted");
       }
       if (change.type === "added") {
-        console.log(change.type);
         let task = change.doc.data();
         displayStorage(task.task, task.quantity, change.doc.id);
       }
